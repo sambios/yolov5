@@ -69,6 +69,13 @@ def detect(save_img=False):
         # Inference
         t1 = time_synchronized()
         pred = model(img, augment=opt.augment)[0]
+       
+        
+        #import cv2
+        #import numpy as np
+        #img = torch.from_numpy(np.expand_dims(cv2.resize(cv2.imread('dog.jpg'), (640,640)), 0).transpose([0,3,1,2]))/255.
+        #torch.jit.trace(model, img).save("yolov5s.pth");
+        #exit()
 
         # Apply NMS
         pred = non_max_suppression(pred, opt.conf_thres, opt.iou_thres, classes=opt.classes, agnostic=opt.agnostic_nms)
