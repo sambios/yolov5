@@ -5,6 +5,7 @@
 
    执行完会输出yolov5s.torchscript.pt
 2. 转bmodel
+```
   import bmnetp
   bmnetp.compile(target="BM1684",
         model="./yolov5s.torchscript.pt",
@@ -12,7 +13,7 @@
         outdir="./yolov5s_bmodel",
         opt=2
 )
-
+```
 
 
 
